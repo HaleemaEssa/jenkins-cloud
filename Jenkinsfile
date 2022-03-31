@@ -28,7 +28,7 @@ pipeline {
     stage('runimage') {
          
             steps {
-                sh 'docker run --privileged -t haleema/docker-cloud'
+                sh 'docker run -v "${PWD}:/data" -t haleema/docker-cloud'
             }
          }    
     
