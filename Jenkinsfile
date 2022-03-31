@@ -11,7 +11,7 @@ pipeline {
         }
     stage('Createdockerimage on cloud') {
             steps {
-                sh 'sudo docker build -t haleema/docker-cloud:latest .'
+                sh 'sudo -S docker build -t haleema/docker-cloud:latest .'
             }
         }     
     stage('Login to Dockerhub') {
@@ -21,14 +21,14 @@ pipeline {
         } 
      stage('pushimage to Dockerhub') {
             steps {
-                sh 'sudo docker push haleema/docker-cloud:latest'
+                sh 'sudo -S docker push haleema/docker-cloud:latest'
             }
         }  
         
     stage('runimage') {
          
             steps {
-                sh 'sudo docker run --privileged -t haleema/docker-cloud'
+                sh 'sudo -S docker run --privileged -t haleema/docker-cloud'
             }
          }    
     
@@ -38,7 +38,7 @@ pipeline {
     }
     post {
         always {
-            sh 'sudo docker logout'
+            sh 'sudo -S docker logout'
         }
     }
 }
