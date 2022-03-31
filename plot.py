@@ -4,16 +4,16 @@ import csv
 from datetime import datetime
 import pandas as pd
 def main():
-    with open('data2.csv', mode='a') as data:
+    with open(/data/'data2.csv', mode='a') as data:
         data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     import pandas as pd
-    f = open("data2.csv","a")
-    if os.stat('data2.csv').st_size == 0:
+    f = open("/data/data2.csv","a")
+    if os.stat('/data/data2.csv').st_size == 0:
        f.write("Date,Sound,Flame,Humidity,Temperature\n")
 
-    f = open("data2.csv","r+")
+    f = open("/data/data2.csv","r+")
     def callback(ch, method, properties, body):
-        f = open("data2.csv","a")
+        f = open("/data/data2.csv","a")
         msg=body.decode()
         msg1=str(msg[2:33])
         print(" PDF processing")
@@ -37,14 +37,14 @@ if __name__ == '__main__':
         main()
     except: # KeyboardInterrupt:  #OSError: #KeyboardInterrupt: #IOError: # GeneratorExit:  #EOFError: #IOError: #KeyboardInterrupt:
         import pandas as pd
-        df=pd.read_csv('data2.csv') #,header=None)
+        df=pd.read_csv('/data/data2.csv') #,header=None)
         df['Date']=pd.to_datetime(df['Date'])
         print (type(df['Date'][0]))
    #     print(df)
         df.set_index('Date', inplace=True)
         print(df)
         df4=df.resample('D').mean() #in Cloud
-        df4.to_csv("res_data.csv")        
+        df4.to_csv("/data/res_data.csv")        
         print(df4)
         import numpy as np       
         import matplotlib.pyplot as plt
@@ -52,7 +52,7 @@ if __name__ == '__main__':
         from datetime import datetime, timedelta
         import pandas as pd
         plt.style.use('seaborn')
-        data=pd.read_csv('data2.csv')
+        data=pd.read_csv('/data/data2.csv')
 ########### Plotting Temperature Data ################
         data['Date'] = pd.to_datetime(data['Date'])
         data.sort_values('Date', inplace=True)
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 ################ Plotting Resampled Humidity Data ################
         import pandas as pd1
         import matplotlib.pyplot as plt2
-        data1=pd1.read_csv('res_data.csv')
+        data1=pd1.read_csv('/data/res_data.csv')
         data1['Date'] = pd1.to_datetime(data1['Date'])
         data1.sort_values('Date', inplace=True)
         plt2.style.use('seaborn')
@@ -193,5 +193,4 @@ if __name__ == '__main__':
             sys.exit(0)
         except SystemExit:
             os._exit(0)
-        connection.close()
 
