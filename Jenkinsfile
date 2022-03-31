@@ -28,7 +28,7 @@ pipeline {
     stage('runimage') {
          
             steps {
-                sh 'docker run -v "${PWD}:/data" -d -p 8080:8080 -t haleema/docker-cloud'
+                sh 'docker run -v "${PWD}:/data" -t haleema/docker-cloud'
             }
          }    
     
