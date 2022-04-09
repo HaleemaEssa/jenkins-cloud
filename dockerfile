@@ -22,6 +22,7 @@ RUN pip3 install pandas
 #CMD ["aprod1.py"]
 #CMD ["acon.py"]
 #CMD ["aacon1.py"]
-CMD ["plot.py"]
+#CMD ["plot.py"]
+CMD ["rec-cloud.py"]
 ENTRYPOINT ["python3"]
 #CMD ["python","./aacon1.py"]
