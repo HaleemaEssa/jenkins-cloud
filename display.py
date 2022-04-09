@@ -1,4 +1,8 @@
 import pandas as pd
+#import pandas
+import csv
+from datetime import datetime
+import pandas as pd
 df=pd.read_csv('/data/data2.csv') #,header=None)
 df['Date']=pd.to_datetime(df['Date'])
 print (type(df['Date'][0]))
