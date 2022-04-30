@@ -4,8 +4,8 @@ import csv
 from datetime import datetime
 import pandas as pd
 def main():
-    with open('/data/data2.csv', mode='w') as data:
-        data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    #with open('/data/data2.csv', mode='w') as data:
+     #   data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     import pandas as pd
     f = open("/data/data2.csv","w")
     if os.stat('/data/data2.csv').st_size == 0:
