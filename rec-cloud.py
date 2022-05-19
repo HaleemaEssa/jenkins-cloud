@@ -7,7 +7,7 @@ def main():
  #   with open('/data/data2.csv', mode='w') as data:
  #       data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     import pandas as pd
-    f = open("/data/data2.csv","w")
+    f = open("/data/data2.csv","a") # w
     if os.stat('/data/data2.csv').st_size == 0:
        f.write("Date,Sound,Flame,Humidity,Temperature\n")
 
