@@ -11,7 +11,7 @@ def main():
     if os.stat('/data/data2.csv').st_size == 0:
        f.write("Date,Sound,Flame,Humidity,Temperature\n")
 
-    f = open("/data/data2.csv","r+")
+    f = open("/data/data2.csv","r") ##r+
     def callback(ch, method, properties, body):
         f = open("/data/data2.csv","a")
         msg=body.decode()
