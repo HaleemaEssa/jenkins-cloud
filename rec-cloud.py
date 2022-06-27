@@ -7,11 +7,11 @@ def main():
  #   with open('/data/data2.csv', mode='w') as data:
  #       data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     import pandas as pd
-    f = open("/data/data2.csv","a") # w
+    f = open("/data/data2.csv","w") # a
     if os.stat('/data/data2.csv').st_size == 0:
        f.write("Date,Sound,Flame,Humidity,Temperature\n")
 
-    f = open("/data/data2.csv","r") ##r+
+    f = open("/data/data2.csv","r+") ##r
     def callback(ch, method, properties, body):
         f = open("/data/data2.csv","a")
         msg=body.decode()
