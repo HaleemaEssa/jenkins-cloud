@@ -13,7 +13,7 @@ def main():
 
     f = open("/data/data2.csv","r+") ##r
     def callback(ch, method, properties, body):
-        f = open("/data/data2.csv","a")
+        #27-6-20222 f = open("/data/data2.csv","a")
         msg=body.decode()
         msg1=str(msg[2:33])
         print(" PDF processing")
